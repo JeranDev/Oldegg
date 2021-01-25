@@ -2,13 +2,14 @@
 import { useState, useEffect } from 'react'
 //Redux
 import { useDispatch, useSelector } from 'react-redux'
+import { getUserDetails, updateUserProfile } from '../actions/userActions'
+import { listMyOrders } from '../actions/orderActions'
+import { USER_UPDATE_PROFILE_RESET } from '../constants/userConstants'
 //Components
 import { Form, Button, Row, Col, Table } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
-import { getUserDetails, updateUserProfile } from '../actions/userActions'
-import { listMyOrders } from '../actions/orderActions'
 
 const ProfileScreen = ({ history, location }) => {
   const [name, setName] = useState('')
@@ -30,7 +31,10 @@ const ProfileScreen = ({ history, location }) => {
     if (!userInfo) {
       history.push('/login')
     } else {
-      if (!user.name) {
+      if (!user || !user.name || success) {
+        dispatch({
+          type: USER_UPDATE_PROFILE_RESET,
+        })
         dispatch(getUserDetails('profile'))
         dispatch(listMyOrders())
       } else {
@@ -38,7 +42,7 @@ const ProfileScreen = ({ history, location }) => {
         setEmail(user.email)
       }
     }
-  }, [dispatch, history, userInfo, user])
+  }, [dispatch, history, userInfo, user, success])
 
   const submitHandler = e => {
     e.preventDefault()
