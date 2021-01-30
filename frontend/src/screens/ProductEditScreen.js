@@ -145,7 +145,7 @@ const ProductEditScreen = ({ history, match }) => {
             </Form.Group>
 
             <Form.Group controlId='brand'>
-              <Form.Label>brand</Form.Label>
+              <Form.Label>Brand</Form.Label>
               <Form.Control
                 type='text'
                 placeholder='Enter brand'
@@ -184,7 +184,7 @@ const ProductEditScreen = ({ history, match }) => {
               ></Form.Control>
             </Form.Group>
 
-            <Button type='submit' variant='primary'>
+            <Button type='submit' variant='success'>
               Update
             </Button>
           </Form>

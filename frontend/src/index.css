@@ -16,11 +16,24 @@ h3 {
   padding: 1rem 0;
 }
 
+.navbar {
+  background-color: #044868;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: #4bbf73;
+}
+
 .rating span {
   margin: 0.1rem;
 }
 
 /* carousel */
+.top-product-carousel {
+  background-color: #277241;
+}
+
 .carousel-item-next,
 .carousel-item-prev,
 .carousel-item.active {

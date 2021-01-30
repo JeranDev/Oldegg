@@ -85,7 +85,7 @@ const RegisterScreen = ({ history, location }) => {
           ></Form.Control>
         </Form.Group>
 
-        <Button type='submit' variant='primary'>
+        <Button type='submit' variant='success'>
           Register
         </Button>
       </Form>

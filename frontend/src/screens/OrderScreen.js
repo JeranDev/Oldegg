@@ -61,7 +61,7 @@ const OrderScreen = ({ match, history }) => {
       script.type = 'text/javascript'
       script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}`
       script.async = true
-      script.onLoad = () => {
+      script.onload = () => {
         setSdkReady(true)
       }
       document.body.appendChild(script)
@@ -224,6 +224,7 @@ const OrderScreen = ({ match, history }) => {
                     <Button
                       type='button'
                       className='btn btn-block'
+                      variant='success'
                       onClick={deliverHandler}
                     >
                       Mark As Delivered
