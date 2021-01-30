@@ -17,7 +17,7 @@ h3 {
 }
 
 .navbar {
-  background-color: #044868;
+  background: linear-gradient(to right, rgb(102, 131, 185), #044868);
 }
 
 .dropdown-item.active,
@@ -31,7 +31,7 @@ h3 {
 
 /* carousel */
 .top-product-carousel {
-  background-color: #838a8d;
+  background: linear-gradient(#838a8d, #5a5d5f);
 }
 
 .carousel-item-next,
